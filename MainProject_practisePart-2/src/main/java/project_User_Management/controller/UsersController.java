@@ -24,7 +24,7 @@ public class UsersController {
 		this.services = services;
 	   }
 	    @PostMapping("/register")
-	    public String register(UsersRequestDto user) {
+	    public String register(@RequestBody UsersRequestDto user) {
 	    	return services.register(user);
        }
 	    @GetMapping("/searchUser/{id}")
@@ -35,7 +35,7 @@ public class UsersController {
 	   public List<UsersResponseDto> viewAllUsers(){
 		   return services.viewAllUsers();
 	   }    
-	    @PutMapping("/updateUSer")
+	    @PutMapping("/updateUser")
 	   public  String updateUser(@RequestBody Users user) {
 		   return services.updateUser(user);
 	   }   
