@@ -6,27 +6,30 @@ import java.time.LocalDate;
 import project_User_Management.entity.Gender;
 
 
-public class UsersResponseDto {
+
+public class UsersUpdateRequestDto {
 
     private Long id;
     private String username;
     private String email;
+    private String password;
     private String mobile;
     private LocalDate dob;
     private Gender gender;
     private String address;
     private String dpUrl;
 
-    public UsersResponseDto() {
+    public UsersUpdateRequestDto() {
         super();
     }
 
-    public UsersResponseDto(Long id, String username, String email, String mobile, LocalDate dob,
-                            Gender gender, String address, String dpUrl) {
+    public UsersUpdateRequestDto(Long id, String username, String email, String password, String mobile,
+                                 LocalDate dob, Gender gender, String address, String dpUrl) {
         super();
         this.id = id;
         this.username = username;
         this.email = email;
+        this.password = password;
         this.mobile = mobile;
         this.dob = dob;
         this.gender = gender;
@@ -57,7 +60,15 @@ public class UsersResponseDto {
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
     public String getMobile() {
         return mobile;
     }
@@ -100,12 +111,8 @@ public class UsersResponseDto {
 
     @Override
     public String toString() {
-        return "UsersResponseDto [id=" + id + ", username=" + username + ", email=" + email + ", mobile=" + mobile
-                + ", dob=" + dob + ", gender=" + gender + ", address=" + address + ", dpUrl=" + dpUrl + "]";
+        return "UsersUpdateRequestDto [id=" + id + ", username=" + username + ", email=" + email + ", password="
+                + password + ", mobile=" + mobile + ", dob=" + dob + ", gender=" + gender + ", address=" + address
+                + ", dpUrl=" + dpUrl + "]";
     }
 }
-
-
-
-
-
